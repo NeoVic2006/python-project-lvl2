@@ -4,11 +4,14 @@ version = "0.1.0"
 description = "Project 2"
 authors = ["NeoVic2006 <NeoVic2006@gmail.com>"]
 
+
 [tool.poetry.dependencies]
 python = "^3.6"
-flake8 = "^3.8.4"
+
 
 [tool.poetry.dev-dependencies]
+proj = "main_script"
+
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

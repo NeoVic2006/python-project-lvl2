@@ -1,16 +1,24 @@
 [tool.poetry]
-name = "hexlet_code"
+name = "python-project-lvl2"
 version = "0.1.0"
-description = "Project 2"
+description = "start"
 authors = ["NeoVic2006 <NeoVic2006@gmail.com>"]
+
+packages = [
+  { include = "test_folder" },
+]
+
 
 
 [tool.poetry.dependencies]
 python = "^3.6"
-
+flake8 = "^3.8.4"
 
 [tool.poetry.dev-dependencies]
-proj = "main_script"
+
+
+[tool.poetry.scripts]
+proj = "test_folder.main_script:main"
 
 
 [build-system]

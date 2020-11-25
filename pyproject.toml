@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "python-project-lvl2"
+name = "NeoVic2006-project-CLI"
 version = "0.1.0"
 description = "start"
 authors = ["NeoVic2006 <NeoVic2006@gmail.com>"]
 
 packages = [
-  { include = "test_folder" },
+  { include = "main_code" },
 ]
 
 
@@ -18,7 +18,7 @@ flake8 = "^3.8.4"
 
 
 [tool.poetry.scripts]
-proj = "test_folder.main_script:main"
+gendiff = "main_code.gendiff:main"
 
 
 [build-system]

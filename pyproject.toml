@@ -1,24 +1,23 @@
 [tool.poetry]
 name = "NeoVic2006-project-CLI"
-version = "0.1.0"
-description = "start"
+version = "0.1.2.2"
+description = "gendiff: second Hexlet project"
 authors = ["NeoVic2006 <NeoVic2006@gmail.com>"]
 
 packages = [
-  { include = "main_code" },
+  { include = "gendiff" },
 ]
 
 
 
 [tool.poetry.dependencies]
 python = "^3.6"
-flake8 = "^3.8.4"
 
 [tool.poetry.dev-dependencies]
 
 
 [tool.poetry.scripts]
-gendiff = "main_code.gendiff:main"
+gendiff = "gendiff.scripts.gendiff:main"
 
 
 [build-system]

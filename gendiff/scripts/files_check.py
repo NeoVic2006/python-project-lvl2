@@ -1,8 +1,8 @@
 import json
 
 
-file_path1 = json.load(open('C:\\Python_Work_for_Hexlet\\python-project-lvl2\\files\\file1.json'))
-file_path2 = json.load(open('C:\\Python_Work_for_Hexlet\\python-project-lvl2\\files\\file2.json'))
+file_path1 = json.load(open('C:\\Python_Work_for_Hexlet\\files\\file1.json'))
+file_path2 = json.load(open('C:\\Python_Work_for_Hexlet\\files\\file2.json'))
 
 
 def generate_diff(file_path1, file_path2):

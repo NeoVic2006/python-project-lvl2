@@ -7,8 +7,8 @@
 
 Install instructions: 
 
-pip3 install -i https://test.pypi.org/simple/ neovic2006-brain-games 
+pip3 install -i https://test.pypi.org/simple/ neovic2006-project-cli
 
-Link for Pypi latest version: https://test.pypi.org/project/neovic2006-brain-games/ 
+Link for Pypi latest version: https://test.pypi.org/project/neovic2006-project-cli/
 
 =======

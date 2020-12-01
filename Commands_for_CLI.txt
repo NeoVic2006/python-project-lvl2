@@ -1,8 +1,0 @@
-
-
-
-1) Чтобы показать Help:
-
-    $ python3 prog.py --help
-
-2) 

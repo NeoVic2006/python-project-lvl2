@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "NeoVic2006-project-CLI"
-version = "0.1.2.2"
+version = "0.1.3"
 description = "gendiff: second Hexlet project"
 authors = ["NeoVic2006 <NeoVic2006@gmail.com>"]
 
@@ -12,6 +12,7 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.6"
+prompt = "^0.4.1"
 
 [tool.poetry.dev-dependencies]
 

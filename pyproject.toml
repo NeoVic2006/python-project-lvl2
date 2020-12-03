@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "NeoVic2006-project-CLI"
-version = "0.2.6"
+version = "0.2.7"
 description = "gendiff working with 2 files"
 authors = ["NeoVic2006 <NeoVic2006@gmail.com>"]
 

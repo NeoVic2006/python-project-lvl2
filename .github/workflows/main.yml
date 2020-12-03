@@ -23,6 +23,7 @@ jobs:
                 make install
                 poetry install
                 pip install pytest 
+                pip3 install -i https://test.pypi.org/simple/ neovic2006-project-cli
             - name: Lint command
               run: |
                 make lint

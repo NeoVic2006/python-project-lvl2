@@ -43,6 +43,6 @@ jobs:
               working-directory: ./tests/fixtures
               run: | 
                 poetry show
-                pytest -q files_check_tests.py
+                poetry run pytest -q files_check_tests.py
 
           

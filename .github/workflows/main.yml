@@ -22,7 +22,7 @@ jobs:
                 pip install poetry
                 make install
                 poetry install
-
+                pip install pytest 
             - name: Lint command
               run: |
                 make lint

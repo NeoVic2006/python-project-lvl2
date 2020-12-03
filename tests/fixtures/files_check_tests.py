@@ -1,5 +1,5 @@
 import json
-from gendiff.scripts.files_check import generate_diff
+from gendiff import generate_diff
 
 
 def test_answer():

@@ -2,7 +2,7 @@ import argparse
 import json
 from os import path
 import os
-from files_check import generate_diff
+from gendiff import generate_diff
 
 
 def main():

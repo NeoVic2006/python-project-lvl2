@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "NeoVic2006-project-CLI"
-version = "0.2.2"
+version = "0.2.3"
 description = "gendiff working with 2 files"
 authors = ["NeoVic2006 <NeoVic2006@gmail.com>"]
 
@@ -20,7 +20,7 @@ pytest = "^6.1.2"
 
 
 [tool.poetry.scripts]
-gendiff = "gendiff.gendiff_launcher:main"
+gendiff = "gendiff.scripts.gendiff_launcher:main"
 
 
 [build-system]

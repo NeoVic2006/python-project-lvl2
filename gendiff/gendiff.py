@@ -1,5 +1,3 @@
-
-
 def generate_diff(file_path1, file_path2):
     result = ('{ ' + '\n')
     unique_keys_file2 = file_path2.keys() - file_path1.keys()

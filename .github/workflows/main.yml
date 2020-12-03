@@ -28,6 +28,7 @@ jobs:
             - name: Run Tests
               working-directory: /tests/fixtures
               run: | 
+                ls -R
                 pytest -q files_check_tests.py
 
           

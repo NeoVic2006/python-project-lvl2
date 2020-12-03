@@ -25,7 +25,7 @@ jobs:
               run: |
                 make lint
             - name: Run Tests
-              working-directory: ./.github/workflow
+              working-directory: .github/workflow
               run: | 
                 pytest -q files_check_tests.py
 

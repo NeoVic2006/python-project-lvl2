@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "NeoVic2006-project-CLI"
-version = "0.2.0"
+version = "0.2.1"
 description = "gendiff working with 2 files"
 authors = ["NeoVic2006 <NeoVic2006@gmail.com>"]
 
@@ -19,7 +19,7 @@ flake8 = "^3.8.4"
 
 
 [tool.poetry.scripts]
-gendiff = "gendiff.gendiff:main"
+gendiff = "gendiff.gendiff_launcher:main"
 
 
 [build-system]

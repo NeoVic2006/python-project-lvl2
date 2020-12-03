@@ -4,8 +4,8 @@ from os import path
 import os
 from files_check import generate_diff
 
+
 def main():
-    
     parser = argparse.ArgumentParser(description="New Generated diff")
     parser.add_argument("first_file")
     parser.add_argument("second_file")
@@ -16,9 +16,12 @@ def main():
 
 
 def cheking_files(args):
-    print ("File 1 exists:"+str(path.exists(args.first_file)))
-    print ("File 2 exists:"+str(path.exists(args.second_file)))  
-
+    if str(path.exists(args.first_file)) is False:
+        print("File 1 is not found!")
+        return
+    if str(path.exists(args.second_file)) is False:
+        print("File 2 is not found!")
+        return
     my_absolute_dirpath = os.path.abspath(os.path.dirname(__file__))
     file_path1 = json.load(open(my_absolute_dirpath + '/' + args.first_file))
     file_path2 = json.load(open(my_absolute_dirpath + '/' + args.second_file))
@@ -29,4 +32,3 @@ def cheking_files(args):
 
 if __name__ == '__main__':
     main()
-

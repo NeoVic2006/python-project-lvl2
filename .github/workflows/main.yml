@@ -24,6 +24,8 @@ jobs:
             - name: Lint command
               run: |
                 make lint
-
-
+            - name: Lint command
+              uses: ./.github/workflow/
+              run: |
+                pytest -q files_check_tests.py
           

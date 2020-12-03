@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "NeoVic2006-project-CLI"
-version = "0.2.3"
+version = "0.2.6"
 description = "gendiff working with 2 files"
 authors = ["NeoVic2006 <NeoVic2006@gmail.com>"]
 
@@ -13,10 +13,10 @@ packages = [
 [tool.poetry.dependencies]
 python = "^3.6"
 prompt = "^0.4.1"
+pytest = "^6.1.2"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^3.8.4"
-pytest = "^6.1.2"
 
 
 [tool.poetry.scripts]

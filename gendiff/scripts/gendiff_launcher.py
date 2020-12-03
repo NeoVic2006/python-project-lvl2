@@ -27,7 +27,6 @@ def cheking_files(args):
     file_path2 = json.load(open(my_absolute_dirpath + '/' + args.second_file))
     result = generate_diff(file_path1, file_path2)
     print(result)
-    return
 
 
 if __name__ == '__main__':

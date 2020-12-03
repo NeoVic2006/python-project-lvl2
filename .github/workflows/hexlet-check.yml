@@ -23,8 +23,8 @@ jobs:
         steps:
             - uses: actions/checkout@v2
 
-            - name: Hexlet project check
-              uses: hexlet/project-action@release
+            #- name: Hexlet project check
+            #  uses: hexlet/project-action@release
               
             - name: Python ${{ matrix.python-version }} installation
               uses: actions/setup-python@v2

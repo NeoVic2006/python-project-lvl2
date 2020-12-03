@@ -25,7 +25,7 @@ jobs:
               run: |
                 make lint
             - name: Run Tests
-              working-directory: ./.github/workflows
+              working-directory: ./tests/fixtures
               run: | 
                 ls -R
 

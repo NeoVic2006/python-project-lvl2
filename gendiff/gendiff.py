@@ -1,7 +1,10 @@
 import json
+import os
 
 
 def generate_diff():
+    my_absolute_dirpath = os.path.abspath(os.path.dirname(__file__))
+    print(my_absolute_dirpath)
     file_p1 = json.load(open('/mnt/c/Python_Work_for_Hexlet/files/file1.json'))
     file_p2 = json.load(open('/mnt/c/Python_Work_for_Hexlet/files/file2.json'))
 

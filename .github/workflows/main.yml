@@ -21,12 +21,13 @@ jobs:
               run: |
                 pip install poetry
                 make install
+                pip install pytest
             - name: Lint command
               run: |
                 make lint
             - name: Run Tests
               working-directory: ./tests/fixtures
               run: | 
-                ls -R
+                pytest -q files_check_tests.py
 
           

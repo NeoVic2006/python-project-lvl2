@@ -1,4 +1,10 @@
-def generate_diff(file_path1, file_path2):
+import json
+
+
+def generate_diff():
+    file_path1 = json.load(open('/mnt/c/Python_Work_for_Hexlet/python-project-lvl2/tests/fixtures/files/file1.json'))
+    file_path2 = json.load(open('/mnt/c/Python_Work_for_Hexlet/python-project-lvl2/tests/fixtures/files/file2.json'))
+
     result = ('{ ' + '\n')
     unique_keys_file2 = file_path2.keys() - file_path1.keys()
     if len(unique_keys_file2) != 0:

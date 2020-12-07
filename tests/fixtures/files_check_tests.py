@@ -1,23 +1,23 @@
 import json
-from gendiff import generate_diff
+from gendiff_file import generate_diff
 
 
 def test_answer():
-
-    file_p1 = json.load(open('/home/runner/work/python-project-lvl2/python-project-lvl2/gendiff/files/file1.json'))
-    file_p2 = json.load(open('/home/runner/work/python-project-lvl2/python-project-lvl2/gendiff/files/file2.json'))
     '''
+    file_path1 = json.load(open('/home/runner/work/python-project-lvl2/python-project-lvl2/gendiff/files/file1.json'))
+    file_path2 = json.load(open('/home/runner/work/python-project-lvl2/python-project-lvl2/gendiff/files/file2.json'))
+
     # Ubuntu version
     file_path1 = json.load(open('/mnt/c/Python_Work_for_Hexlet/python-project-lvl2/tests/fixtures/files/file1.json'))
     file_path2 = json.load(open('/mnt/c/Python_Work_for_Hexlet/python-project-lvl2/tests/fixtures/files/file2.json'))
-
+    '''
     # CMD version 
     file_path1 = json.load(open('C:\\Python_Work_for_Hexlet\\python-project-lvl2\\tests\\fixtures\\files\\file1.json'))
     file_path2 = json.load(open('C:\\Python_Work_for_Hexlet\\python-project-lvl2\\tests\\fixtures\\files\\file2.json'))
-    '''
+    
    
     result = '{ \n  + verbose: True\n    host: hexlet.io\n  - timeout: 50\n  + timeout: 20\n  - proxy: 123.234.53.22\n  - follow: False\n}'
-    assert generate_diff(file_p1, file_p2) == result
+    assert generate_diff(file_path1, file_path2) == result
 
 if __name__ == '__main__':
     test_answer()

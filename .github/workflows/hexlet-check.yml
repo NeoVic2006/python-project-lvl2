@@ -36,9 +36,9 @@ jobs:
                 make install
                 poetry install
                 
-            #- name: Lint command
-            #  run: |
-            #    make lint
+            - name: Lint command
+              run: |
+                make lint
             - name: Run Tests
               working-directory: ./tests/fixtures
               run: | 

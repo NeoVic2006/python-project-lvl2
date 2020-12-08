@@ -2,14 +2,12 @@ import json
 
 
 def generate_diff(file_name1, file_name2):
-
+    '''
     json_file_1 = json.load(open('C:\\Python_Work_for_Hexlet\\python-project-lvl2\\tests\\fixtures\\files\\file1.json'))
     json_file_2 = json.load(open('C:\\Python_Work_for_Hexlet\\python-project-lvl2\\tests\\fixtures\\files\\file2.json'))
-
     '''
-    json_file_1 = read_json_file(file_name1)
-    json_file_2 = read_json_file(file_name2)
-    '''
+    json_file_1 = json.load(open('/mnt/c/Python_Work_for_Hexlet/python-project-lvl2/tests/fixtures/files/file1.json'))
+    json_file_2 = json.load(open('/mnt/c/Python_Work_for_Hexlet/python-project-lvl2/tests/fixtures/files/file2.json'))
 
     result = ('{ ' + '\n')
 
@@ -32,12 +30,3 @@ def generate_diff(file_name1, file_name2):
             result = result + ('\n' + "  - " + str(key) + ": " + str(value))
     result = result + ('\n' + '}')
     return result
-
-'''
-def read_json_file(filename):
-    print(filename)
-    with open(filename) as json_file:
-        return json.load(json_file)
-
-# generate_diff('file1.json', 'file2.json')
-'''

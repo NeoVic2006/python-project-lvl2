@@ -1,6 +1,9 @@
 import argparse
-from gendiff_file import generate_diff
+import sys
 
+#sys.path.insert(0, "C:\Python_Work_for_Hexlet\python-project-lvl2")
+
+from gendiff.gendiff_file import generate_diff
 
 def main():
     parser = argparse.ArgumentParser(description="New Generated diff")

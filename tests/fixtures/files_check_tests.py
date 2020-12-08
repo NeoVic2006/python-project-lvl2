@@ -1,5 +1,5 @@
 import json
-from gendiff_file import generate_diff
+from gendiff.gendiff_file import generate_diff
 
 def test_answer():
     '''

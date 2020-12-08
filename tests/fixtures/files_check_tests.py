@@ -17,8 +17,8 @@ def test_answer():
     '''
 
     # CMD version 
-    file_path1 = json.load(open('C:\\Python_Work_for_Hexlet\\python-project-lvl2\\tests\\fixtures\\files\\file1.json'))
-    file_path2 = json.load(open('C:\\Python_Work_for_Hexlet\\python-project-lvl2\\tests\\fixtures\\files\\file2.json'))
+    file_path1 = json.load(open('file1.json'))
+    file_path2 = json.load(open('file2.json'))
     
     print("testing")
     result = '{ \n  + verbose: True\n    host: hexlet.io\n  - timeout: 50\n  + timeout: 20\n  - proxy: 123.234.53.22\n  - follow: False\n}'

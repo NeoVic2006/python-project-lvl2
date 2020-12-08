@@ -42,7 +42,6 @@ jobs:
             - name: Run Tests
               working-directory: ./tests/fixtures
               run: | 
-                poetry show
                 poetry run pytest -q files_check_tests.py
 
           

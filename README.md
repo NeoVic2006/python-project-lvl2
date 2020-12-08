@@ -12,3 +12,6 @@ pip3 install -i https://test.pypi.org/simple/ neovic2006-project-cli
 Link for Pypi latest version: https://test.pypi.org/project/neovic2006-project-cli/
 
 =======
+
+First update 0.3.5. Demo of gendiff library:
+<a href="https://asciinema.org/a/KDrosXZZCkWBvEdHnQS0AL2yS" target="_blank"><img src="https://asciinema.org/a/PC0cFNvfiJ0ITBHYiyaFHGzyu.svg" /></a>

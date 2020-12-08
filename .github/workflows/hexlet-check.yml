@@ -40,7 +40,7 @@ jobs:
             #  run: |
             #    make lint
             - name: Run Tests
-              working-directory: ./tests/fixtures/files
+              working-directory: ./tests/fixtures
               run: | 
                 poetry run pytest -q files_check_tests.py
 

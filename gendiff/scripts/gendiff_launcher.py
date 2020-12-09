@@ -1,7 +1,6 @@
 import argparse
 import sys
 
-sys.path.append('C:\Python_Work_for_Hexlet\python-project-lvl2') 
 
 from gendiff.gendiff_file import generate_diff
 

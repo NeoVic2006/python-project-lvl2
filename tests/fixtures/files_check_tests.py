@@ -16,8 +16,8 @@ def test_answer():
     file_path2 = json.load(open('/mnt/c/Python_Work_for_Hexlet/python-project-lvl2/tests/fixtures/files/file2.json'))
     '''
     # CMD version 
-    file_path1 = json.load(open('files/file1.json'))
-    file_path2 = json.load(open('files/file2.json'))
+    file_path1 = json.load(open('file1.json'))
+    file_path2 = json.load(open('file2.json'))
     
 
 

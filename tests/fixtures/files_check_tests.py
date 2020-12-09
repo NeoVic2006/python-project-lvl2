@@ -7,18 +7,18 @@ def test_answer():
     path = os.getcwd()
     print(path)
 
-    '''
+    
     file_path1 = json.load(open('/home/runner/work/python-project-lvl2/python-project-lvl2/gendiff/files/file1.json'))
     file_path2 = json.load(open('/home/runner/work/python-project-lvl2/python-project-lvl2/gendiff/files/file2.json'))
-    
+    '''
     # Ubuntu version
     file_path1 = json.load(open('/mnt/c/Python_Work_for_Hexlet/python-project-lvl2/tests/fixtures/files/file1.json'))
     file_path2 = json.load(open('/mnt/c/Python_Work_for_Hexlet/python-project-lvl2/tests/fixtures/files/file2.json'))
-    '''
+    
     # CMD version 
     file_path1 = json.load(open('file1.json'))
     file_path2 = json.load(open('file2.json'))
-    
+    '''
 
 
 

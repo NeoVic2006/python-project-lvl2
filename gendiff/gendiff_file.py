@@ -42,4 +42,5 @@ def reading_json_file(filename):
     path = os.getcwd()
     print(path)
     with open(filename) as json_file:
+        print(json.load(json_file))
         return json.load(json_file)

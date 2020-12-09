@@ -1,4 +1,5 @@
 import json
+import os
 
 
 def generate_diff(json_file_1, json_file_2):
@@ -39,5 +40,7 @@ def generate_diff(json_file_1, json_file_2):
 
 
 def _read_json_file(filename: str):
+    path = os.getcwd()
+    print(path)
     with open(filename) as json_file:
         return json.load(json_file)

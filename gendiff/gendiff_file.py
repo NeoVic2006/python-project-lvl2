@@ -6,7 +6,6 @@ def generate_diff(json_file_1, json_file_2):
     json2 = reading_json_file(json_file_2)
 
     result = ('{ ' + '\n')
-
     unique_keys_file2 = json2.keys() - json1.keys()
 
     if len(unique_keys_file2) != 0:

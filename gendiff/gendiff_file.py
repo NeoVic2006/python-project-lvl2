@@ -1,19 +1,10 @@
 import json
-import os
 
 
 def generate_diff(json_file_1, json_file_2):
-
-    '''
-    json_file_1 = json.load(open('C:\\Python_Work_for_Hexlet\\python-project-lvl2\\tests\\fixtures\\files\\file1.json'))
-    json_file_2 = json.load(open('C:\\Python_Work_for_Hexlet\\python-project-lvl2\\tests\\fixtures\\files\\file2.json'))
-    
-    json_file_1 = json.load(open('/mnt/c/Python_Work_for_Hexlet/python-project-lvl2/tests/fixtures/files/file1.json'))
-    json_file_2 = json.load(open('/mnt/c/Python_Work_for_Hexlet/python-project-lvl2/tests/fixtures/files/file2.json'))
-    '''
     json1 = reading_json_file(json_file_1)
     json2 = reading_json_file(json_file_2)
-    
+
     result = ('{ ' + '\n')
 
     unique_keys_file2 = json2.keys() - json1.keys()
@@ -35,7 +26,6 @@ def generate_diff(json_file_1, json_file_2):
             result = result + ('\n' + "  - " + str(key) + ": " + str(value))
     result = result + ('\n' + '}')
     return result
-
 
 
 def reading_json_file(filename):

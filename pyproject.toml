@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "NeoVic2006-project-CLI"
-version = "0.5.0"
+version = "0.5.1"
 description = "All tests for step 4 DONE"
 authors = ["Sergey Vengilevskiy <NeoVic2006@gmail.com>"]
 

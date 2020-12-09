@@ -1,7 +1,4 @@
 import argparse
-import sys
-
-
 from gendiff.gendiff_file import generate_diff
 
 

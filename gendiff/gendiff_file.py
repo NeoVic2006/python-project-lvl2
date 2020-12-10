@@ -28,8 +28,14 @@ def generate_diff_JSON(json_file_1, json_file_2):
     return result
 
 
-def generate_diff_YAML(json_file_1, json_file_2):
+
+
+
+def generate_diff_YAML(yml_file_1, yml_file_2):
     print("YAML start")
+
+
+
 
 
 def reading_json_file(filename):

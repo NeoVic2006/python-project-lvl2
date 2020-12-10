@@ -24,7 +24,7 @@ def reading_json_file(filename):
 def comparing_files(file1, file2):
     result = ('{ ' + '\n')
     unique_keys_file2 = file2.keys() - file1.keys()
-    
+
     if len(unique_keys_file2) != 0:
         for key in unique_keys_file2:
             result = result + ("  + "+str(key)+": " + str(file2[key]))

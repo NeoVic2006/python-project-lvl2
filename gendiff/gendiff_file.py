@@ -26,7 +26,7 @@ def generate_diff_JSON(json_file_1, json_file_2):
             result = result + ('\n' + "  - " + str(key) + ": " + str(value))
     result = result + ('\n' + '}')
     return result
-    
+
 
 def generate_diff_YAML(yml_file_1, yml_file_2):
     print("YAML start")

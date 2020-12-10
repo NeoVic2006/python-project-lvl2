@@ -3,8 +3,8 @@ import yaml
 
 
 def generate_diff_JSON(json_file_1, json_file_2):
-    json1 = reading_json_file(json_file_1)
-    json2 = reading_json_file(json_file_2)
+    json1 = json.load(open(json_file_1))
+    json2 = json.load(open(json_file_2))
     print(json1, json2)
     return comparing_files(json1, json2)
 
@@ -14,11 +14,6 @@ def generate_diff_YAML(yml_file_1, yml_file_2):
     yaml2 = yaml.load(open(yml_file_2, 'r'), Loader=yaml.FullLoader)
     print(yaml1, yaml2)
     return comparing_files(yaml1, yaml2)
-
-
-def reading_json_file(filename):
-    with open(filename) as json_file:
-        return json.load(json_file)
 
 
 def comparing_files(file1, file2):

@@ -27,9 +27,9 @@ jobs:
               run: |
                 make lint
             - name: Run Tests
-              working-directory: ./tests
+              #working-directory: ./tests
               run: | 
                 pwd
-                poetry run pytest -q tests_for_JSON.py
-
+                poetry run pytest -q tests/tests_for_JSON.py
+                poetry run pytest --cov=gendiff --cov-report xml tests/tests_for_JSON.py
           

@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "NeoVic2006-project-CLI"
-version = "0.5.3"
-description = "Yaml comparison function added"
+version = "0.6.0"
+description = "New Comparison feature added"
 authors = ["Sergey Vengilevskiy <NeoVic2006@gmail.com>"]
 
 packages = [

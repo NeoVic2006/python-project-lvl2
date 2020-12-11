@@ -5,36 +5,47 @@ import yaml
 def generate_diff_JSON(json_file_1, json_file_2):
     json1 = json.load(open(json_file_1))
     json2 = json.load(open(json_file_2))
-    print(json1, json2)
     return comparing_files(json1, json2)
 
 
 def generate_diff_YAML(yml_file_1, yml_file_2):
     yaml1 = yaml.load(open(yml_file_1, 'r'), Loader=yaml.FullLoader)
     yaml2 = yaml.load(open(yml_file_2, 'r'), Loader=yaml.FullLoader)
-    print(yaml1, yaml2)
     return comparing_files(yaml1, yaml2)
 
 
 def comparing_files(file1, file2):
-    result = ('{ ' + '\n')
-    unique_keys_file2 = file2.keys() - file1.keys()
+    new_keys = file2.keys() - file1.keys()
+    old_keys = file1.keys() - file2.keys()
+    same_keys = file1.keys() - new_keys - old_keys 
 
-    if len(unique_keys_file2) != 0:
-        for key in unique_keys_file2:
-            result = result + ("  + "+str(key)+": " + str(file2[key]))
+    result = []
 
-    for key, value in file1.items():
-        if key in file2:
-            if value == file2[key]:
-                result = result + ('\n' + "    " +
-                                   str(key) + ": " + str(file2[key]))
-            else:
-                result = result + ('\n' + "  - " +
-                                   str(key) + ": " + str(value))
-                result = result + ('\n' + "  + " +
-                                   str(key) + ": " + str(file2[key]))
+    for i in same_keys:
+        if isinstance(file1[i],dict) and isinstance(file2[i],dict):
+            result.append({"name": i, "value": comparing_files(file1[i], file2[i]), "status": "same"})
         else:
-            result = result + ('\n' + "  - " + str(key) + ": " + str(value))
-    result = result + ('\n' + '}')
+            if file1[i] == file2[i]:
+                result.append({"name": i, "value": file2[i], "status": "same"})
+            else:
+                result.append({"name": i, "value": file1[i], "status": "old"})
+                result.append({"name": i, "value": file2[i], "status": "new"})
+    
+    for i in new_keys:
+        result.append({
+            "name": i,
+            "value": file2[i],
+            "status": "new"
+        })
+
+    for i in old_keys:
+        result.append({
+            "name": i,
+            "value": file1[i],
+            "status": "old"
+        })    
+    
+
     return result
+
+

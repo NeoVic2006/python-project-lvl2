@@ -11,6 +11,6 @@ if __name__ == '__main__':
     test_answer()
 
 
-# pytest -q tests_for_JSON.py
+# pytest -q tests.py
 # pip install pytest-cov  
-# pytest --cov=gendiff --cov-report xml tests/tests_for_JSON.py
+# pytest --cov=gendiff --cov-report xml tests/tests.py

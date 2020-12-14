@@ -17,35 +17,24 @@ def generate_diff_YAML(yml_file_1, yml_file_2):
 def comparing_files(file1, file2):
     new_keys = file2.keys() - file1.keys()
     old_keys = file1.keys() - file2.keys()
-    same_keys = file1.keys() - new_keys - old_keys 
+    same_keys = file1.keys() - new_keys - old_keys
 
     result = []
 
     for i in same_keys:
-        if isinstance(file1[i],dict) and isinstance(file2[i],dict):
-            result.append({"name": i, "value": comparing_files(file1[i], file2[i]), "status": "same"})
+        if isinstance(file1[i], dict) and isinstance(file2[i], dict):
+            result.append({"name": i,
+                           "value": comparing_files(file1[i], file2[i]),
+                           "status": "same"})
         else:
             if file1[i] == file2[i]:
                 result.append({"name": i, "value": file2[i], "status": "same"})
             else:
                 result.append({"name": i, "value": file1[i], "status": "old"})
                 result.append({"name": i, "value": file2[i], "status": "new"})
-    
     for i in new_keys:
-        result.append({
-            "name": i,
-            "value": file2[i],
-            "status": "new"
-        })
-
+        result.append({"name": i, "value": file2[i], "status": "new"})
     for i in old_keys:
-        result.append({
-            "name": i,
-            "value": file1[i],
-            "status": "old"
-        })    
-    
+        result.append({"name": i, "value": file1[i], "status": "old"})
 
     return result
-
-

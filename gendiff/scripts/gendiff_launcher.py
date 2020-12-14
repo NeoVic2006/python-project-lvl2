@@ -1,6 +1,6 @@
 import argparse
 from gendiff.scripts.check_file_format import check_format
-
+from .stylish import stylish
 
 def main():
     '''
@@ -14,7 +14,9 @@ def main():
     parser.add_argument("-f", "--format", help="set format of output")
     args = parser.parse_args()
     result = check_format(args.first_file, args.second_file)
-    print(result)
+    #print(result)
+    final_result = stylish(result)
+    print(final_result)
     return result
 
 

@@ -3,6 +3,8 @@
 
 [![Github Actions Status](https://github.com/NeoVic2006/python-project-lvl2/workflows/CI/badge.svg)](https://github.com/NeoVic2006/python-project-lvl2/actions)
 
+[![Test Coverage](https://api.codeclimate.com/v1/badges/0ff4b228a29585c0b927/test_coverage)](https://codeclimate.com/github/NeoVic2006/python-project-lvl2/test_coverage)
+
 =======
 
 Install instructions: 

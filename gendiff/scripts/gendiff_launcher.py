@@ -17,7 +17,7 @@ def main():
     #print(result)
     final_result = stylish(result)
     print(final_result)
-    return result
+    return final_result
 
 
 if __name__ == '__main__':

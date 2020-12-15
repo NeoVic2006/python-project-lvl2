@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "NeoVic2006-project-CLI"
-version = "0.6.3"
-description = "Comparing files function improved"
+version = "0.6.4"
+description = "All functionality for Stylish is done"
 authors = ["Sergey Vengilevskiy <NeoVic2006@gmail.com>"]
 
 packages = [

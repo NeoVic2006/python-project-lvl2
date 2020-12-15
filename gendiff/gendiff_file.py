@@ -28,21 +28,23 @@ def comparing_files(file1, file2):
                            "status": "same"})
         else:
             if file1[i] == file2[i]:
-                result.append({"name": i, "value": file2[i], "status": "same"})
+                result.append(single_file_check(i, file2, "same"))
             else:
-                result.append({"name": i, "value": file1[i], "status": "old"})
-                result.append({"name": i, "value": file2[i], "status": "new"})
+                result.append(single_file_check(i, file1, "old"))
+                result.append(single_file_check(i, file2, "new"))
+
+    for i in old_keys:
+        result.append(single_file_check(i, file1, "old"))
 
     for i in new_keys:
-        if isinstance(file2[i], dict):
-            result.append({"name": i, "value": comparing_files(file2[i], file2[i]), "status": "new"})
-        else:
-            result.append({"name": i, "value": file2[i], "status": "new"})
-    
-    for i in old_keys:
-        if isinstance(file1[i], dict):
-            result.append({"name": i, "value": comparing_files(file1[i], file1[i]), "status": "old"})
-        else:
-            result.append({"name": i, "value": file1[i], "status": "old"})
-
+        result.append(single_file_check(i, file2, "new"))
     return result
+
+
+def single_file_check(i, file, status):
+    if isinstance(file[i], dict):
+        return {"name": i,
+                "value": comparing_files(file[i], file[i]),
+                "status": status}
+    else:
+        return {"name": i, "value": file[i], "status": status}

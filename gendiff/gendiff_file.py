@@ -15,10 +15,7 @@ def generate_diff_YAML(yml_file_1, yml_file_2):
 
 
 def comparing_files(file1, file2):
-    new_keys = file2.keys() - file1.keys()
-    old_keys = file1.keys() - file2.keys()
-    same_keys = file1.keys() - new_keys - old_keys
-
+    new_keys, old_keys, same_keys = _generating_keys(file1, file2)
     result = []
 
     for i in same_keys:
@@ -28,23 +25,39 @@ def comparing_files(file1, file2):
                            "status": "same"})
         else:
             if file1[i] == file2[i]:
-                result.append(single_file_check(i, file2, "same"))
+                result.append(_single_file_check(i, file2, "same"))
             else:
-                result.append(single_file_check(i, file1, "old"))
-                result.append(single_file_check(i, file2, "new"))
+                result.append(_single_file_check(i, file1, "old"))
+                result.append(_single_file_check(i, file2, "new"))
 
     for i in old_keys:
-        result.append(single_file_check(i, file1, "old"))
-
+        result.append(_single_file_check(i, file1, "old"))
+    
     for i in new_keys:
-        result.append(single_file_check(i, file2, "new"))
+        result.append(_single_file_check(i, file2, "new"))
+    
     return result
 
+'''
+def _keys_check(keys, file):
+    result = []
+    for i in keys:
+        result.append(_single_file_check(i, file, "new"))
+    return result
+'''
 
-def single_file_check(i, file, status):
+def _single_file_check(i, file, status):
     if isinstance(file[i], dict):
         return {"name": i,
                 "value": comparing_files(file[i], file[i]),
                 "status": status}
     else:
         return {"name": i, "value": file[i], "status": status}
+
+
+def _generating_keys(file1, file2):
+    new_keys = file2.keys() - file1.keys()
+    old_keys = file1.keys() - file2.keys()
+    same_keys = file1.keys() - new_keys - old_keys
+    return new_keys, old_keys, same_keys
+

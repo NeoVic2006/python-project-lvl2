@@ -15,7 +15,10 @@ def generate_diff_YAML(yml_file_1, yml_file_2):
 
 
 def comparing_files(file1, file2):
-    new_keys, old_keys, same_keys = _generating_keys(file1, file2)
+    new_keys = file2.keys() - file1.keys()
+    old_keys = file1.keys() - file2.keys()
+    same_keys = file1.keys() - new_keys - old_keys
+
     result = []
 
     for i in same_keys:
@@ -55,9 +58,4 @@ def _single_file_check(i, file, status):
         return {"name": i, "value": file[i], "status": status}
 
 
-def _generating_keys(file1, file2):
-    new_keys = file2.keys() - file1.keys()
-    old_keys = file1.keys() - file2.keys()
-    same_keys = file1.keys() - new_keys - old_keys
-    return new_keys, old_keys, same_keys
 

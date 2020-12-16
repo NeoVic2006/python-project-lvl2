@@ -1,6 +1,3 @@
-from operator import itemgetter
-
-
 status = {
     'new': "+",
     'old': "-",
@@ -9,7 +6,6 @@ status = {
 
 
 def stylish(file, spaces=2):
-    file = sorted(file, key=itemgetter('name'))
     string = ' {'
     for i in file:
         string += "\n" + spaces*" " + status[i['status']] + " " + i["name"]
@@ -22,3 +18,14 @@ def stylish(file, spaces=2):
                 string += ": " + str(i["value"])
     string += "\n" + ((spaces-2)*" ") + "}"
     return string
+
+
+def formatter(data, format):
+    if format == "stylish":
+        return stylish(data)
+    elif format == "flat":
+        return stylish(data)
+    elif format == "json":
+        return stylish(data)
+    else:
+        print("Wrong format option!")

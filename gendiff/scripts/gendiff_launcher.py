@@ -1,6 +1,6 @@
 import argparse
-from gendiff.scripts.check_file_format import check_format
-from .stylish import stylish
+from gendiff.scripts.check_file_extention import check_extension
+from gendiff.scripts.formatters import formatter
 
 
 def main():
@@ -12,11 +12,14 @@ def main():
     parser = argparse.ArgumentParser(description="New Generated diff")
     parser.add_argument("first_file")
     parser.add_argument("second_file")
-    parser.add_argument("-f", "--format", help="set format of output")
+    parser.add_argument("-f", "--format",
+                        help="set output format",
+                        default="stylish")
     args = parser.parse_args()
-    stylish_format = stylish(check_format(args.first_file, args.second_file))
-    print(stylish_format)
-    return stylish_format
+    result = formatter(check_extension(args.first_file,
+                                       args.second_file), args.format)
+    # print(result)
+    return result
 
 
 if __name__ == '__main__':

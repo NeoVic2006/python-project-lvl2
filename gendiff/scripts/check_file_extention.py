@@ -1,7 +1,7 @@
 from gendiff.gendiff_file import generate_diff_JSON, generate_diff_YAML
 
 
-def check_format(file_name1, file_name2):
+def check_extension(file_name1, file_name2):
     '''
     Checking files format and starts proper function
     to convert the files

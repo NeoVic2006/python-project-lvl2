@@ -19,6 +19,7 @@ def main():
     result = formatter(check_extension(args.first_file,
                                        args.second_file), args.format)
     # print(result)
+    # test
     return result
 
 

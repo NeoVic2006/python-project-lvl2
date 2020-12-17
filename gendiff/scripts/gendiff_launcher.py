@@ -16,9 +16,10 @@ def main():
                         help="set output format",
                         default="stylish")
     args = parser.parse_args()
+    print(check_extension(args.first_file,args.second_file), args.format)
     result = formatter(check_extension(args.first_file,
                                        args.second_file), args.format)
-    # print(result)
+    print(result)
     # test
     return result
 

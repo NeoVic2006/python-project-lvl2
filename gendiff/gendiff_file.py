@@ -1,18 +1,17 @@
 import json
 import yaml
-from operator import itemgetter
 
 
 def generate_diff_JSON(json_file_1, json_file_2):
     json1 = json.load(open(json_file_1))
     json2 = json.load(open(json_file_2))
-    return sorted(comparing_files(json1, json2), key=itemgetter('name'))
+    return comparing_files(json1, json2)
 
 
 def generate_diff_YAML(yml_file_1, yml_file_2):
     yaml1 = yaml.load(open(yml_file_1, 'r'), Loader=yaml.FullLoader)
     yaml2 = yaml.load(open(yml_file_2, 'r'), Loader=yaml.FullLoader)
-    return sorted(comparing_files(yaml1, yaml2), key=itemgetter('name'))
+    return comparing_files(yaml1, yaml2)
 
 
 def comparing_files(file1, file2):
@@ -31,8 +30,8 @@ def comparing_files(file1, file2):
             if file1[i] == file2[i]:
                 result.append(_single_file_check(i, file2, "same"))
             else:
-                result.append(_single_file_check(i, file1, "old"))
-                result.append(_single_file_check(i, file2, "new"))
+                result.append(_single_file_check(i, file1, "changed_old"))
+                result.append(_single_file_check(i, file2, "changed_new"))
 
     for i in old_keys:
         result.append(_single_file_check(i, file1, "old"))
@@ -40,15 +39,6 @@ def comparing_files(file1, file2):
         result.append(_single_file_check(i, file2, "new"))
 
     return result
-
-
-'''
-def _keys_check(keys, file):
-    result = []
-    for i in keys:
-        result.append(_single_file_check(i, file, "new"))
-    return result
-'''
 
 
 def _single_file_check(i, file, status):

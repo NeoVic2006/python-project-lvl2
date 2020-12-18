@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "NeoVic2006-project-CLI"
+name = "hexlet_code"
 version = "0.9.0"
 description = "JSON formater added with tests"
 authors = ["Sergey Vengilevskiy <NeoVic2006@gmail.com>"]

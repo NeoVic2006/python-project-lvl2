@@ -1,10 +1,8 @@
 ### Hexlet tests and linter status:
-
+[![Maintainability](https://api.codeclimate.com/v1/badges/a4bb2bcb4ba0d791eb18/maintainability)](https://codeclimate.com/github/NeoVic2006/python-project-lvl1/maintainability)
 <a href="https://codeclimate.com/github/NeoVic2006/python-project-lvl2/maintainability"><img src="https://api.codeclimate.com/v1/badges/5bc047f15d925f50a87a/maintainability" /></a>
-
-<a href="https://codeclimate.com/github/NeoVic2006/python-project-lvl2/test_coverage"><img src="https://api.codeclimate.com/v1/badges/5bc047f15d925f50a87a/test_coverage" /></a>
-
 [![Github Actions Status](https://github.com/NeoVic2006/python-project-lvl2/workflows/CI/badge.svg)](https://github.com/NeoVic2006/python-project-lvl2/actions)
+
 
 =======
 

@@ -26,4 +26,4 @@ Third update 0.7.0. Demo of gendiff library with Recursive Yml files:
 <a href="https://asciinema.org/a/l8ZoGO5OEkUgdOnpqPADf3iAS" target="_blank"><img src="https://asciinema.org/a/PC0cFNvfiJ0ITBHYiyaFHGzyu.svg" /></a>
 
 Third update 0.9.0. Demo of gendiff library with JSON formating:
-<a href="https://asciinema.org/a/l8ZoGO5OEkUgdOnpqPADf3iAS" target="_blank"><img src="https://asciinema.org/a/04FC5ynmaTrTrHlW7Icfh4Jyd" /></a>
+<a href="https://asciinema.org/a/l8ZoGO5OEkUgdOnpqPADf3iAS" target="_blank"><img src="https://asciinema.org/a/04FC5ynmaTrTrHlW7Icfh4Jyd.svg" /></a>

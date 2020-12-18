@@ -1,4 +1,4 @@
-from gendiff.gendiff_file import generate_diff_JSON, generate_diff_YAML
+from gendiff.gendiff import generate_diff_JSON, generate_diff_YAML
 from gendiff.formatters.formatter import formatters
 from gendiff.scripts.check_file_extention import check_extension
 

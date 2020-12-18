@@ -1,5 +1,6 @@
 import json
 import yaml
+from operator import itemgetter
 
 
 def generate_diff_JSON(json_file_1, json_file_2):
@@ -37,7 +38,7 @@ def comparing_files(file1, file2):
         result.append(_single_file_check(i, file1, "old"))
     for i in new_keys:
         result.append(_single_file_check(i, file2, "new"))
-
+    result = sorted(result, key=itemgetter('name'))
     return result
 
 

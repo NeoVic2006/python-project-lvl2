@@ -1,13 +1,14 @@
-from gendiff.formatters.stylish import stylish
-from gendiff.formatters.plain import plain
+from gendiff.formatters.stylish import stylish_formatter
+from gendiff.formatters.plain import plain_formatter
+from gendiff.formatters.json import json_formatter
 
 
-def formatter(data, format):
+def formatters(data, format):
     if format == "stylish":
-        return stylish(data)
+        return stylish_formatter(data)
     elif format == "plain":
-        return plain(data)
+        return plain_formatter(data)
     elif format == "json":
-        return stylish(data)
+        return json_formatter(data)
     else:
         print("Wrong format option!")

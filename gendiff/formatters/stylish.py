@@ -1,7 +1,4 @@
-from operator import itemgetter
-
-
-status = {
+STATUSES = {
     'new': "+",
     'old': "-",
     'same': " ",
@@ -10,13 +7,12 @@ status = {
 }
 
 
-def stylish(file, spaces=2):
-    file = sorted(file, key=itemgetter('name'))
+def stylish_formatter(file, spaces=2):
     string = ' {'
     for i in file:
-        string += "\n" + spaces*" " + status[i['status']] + " " + i["name"]
+        string += "\n" + spaces*" " + STATUSES[i['status']] + " " + i["name"]
         if isinstance(i["value"], list):
-            string += stylish(i["value"], spaces + 4)
+            string += stylish_formatter(i["value"], spaces + 4)
         else:
             if i["value"] is None:
                 string += ": " + "null"

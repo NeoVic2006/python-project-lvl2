@@ -1,24 +1,12 @@
-from operator import itemgetter
-
-
-status = {
-    'new': "+",
-    'old': "-",
-    'same': " ",
-    'changed_old': "-",
-    'changed_new': "+"
-}
-
-
-def plain(file, path=''):
-    file = sorted(file, key=itemgetter('name'))
+def plain_formatter(file, path=''):
     strings = []
     changed_status = {}
     for i in file:
         if isinstance(i["value"], list):
             if i["status"] == "same":
                 strings.append("{}".format(
-                    plain(i["value"], path=path + (i["name"] + "."))))
+                    plain_formatter(i["value"],
+                                    path=path + (i["name"] + "."))))
         if i["status"] == "new":
             strings.append("Property '{}{}' was added with value: {}".format(
                 path, i["name"], _format_value(i["value"])))

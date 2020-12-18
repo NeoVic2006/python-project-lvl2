@@ -1,6 +1,6 @@
 import argparse
 from gendiff.scripts.check_file_extention import check_extension
-from gendiff.formatters.formatter import formatter
+from gendiff.formatters.formatter import formatters
 
 
 def main():
@@ -16,8 +16,8 @@ def main():
                         help="set output format",
                         default="stylish")
     args = parser.parse_args()
-    result = formatter(check_extension(args.first_file,
-                                       args.second_file), args.format)
+    result = formatters(check_extension(args.first_file,
+                                        args.second_file), args.format)
     print(result)
     return result
 

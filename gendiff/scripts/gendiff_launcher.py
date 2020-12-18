@@ -18,7 +18,7 @@ def main():
     args = parser.parse_args()
     result = formatters(check_extension(args.first_file,
                                         args.second_file), args.format)
-    print(result)
+    #print(result)
     return result
 
 

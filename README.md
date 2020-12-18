@@ -19,11 +19,17 @@ Link for Pypi latest version: https://test.pypi.org/project/neovic2006-project-c
 #### First update 0.3.5. Demo of gendiff library with JSON files:
 <a href="https://asciinema.org/a/KDrosXZZCkWBvEdHnQS0AL2yS" target="_blank"><img src="https://asciinema.org/a/PC0cFNvfiJ0ITBHYiyaFHGzyu.svg" /></a>
 
+=======
+
 #### Second update 0.6.0. Demo of gendiff library with YML files:
 <a href="https://asciinema.org/a/l8ZoGO5OEkUgdOnpqPADf3iAS" target="_blank"><img src="https://asciinema.org/a/PC0cFNvfiJ0ITBHYiyaFHGzyu.svg" /></a>
 
+=======
+
 #### Third update 0.7.0. Demo of gendiff library with Recursive Yml files:
 <a href="https://asciinema.org/a/l8ZoGO5OEkUgdOnpqPADf3iAS" target="_blank"><img src="https://asciinema.org/a/PC0cFNvfiJ0ITBHYiyaFHGzyu.svg" /></a>
+
+=======
 
 #### Third update 0.9.0. Demo of gendiff library with JSON formating:
 <a href="https://asciinema.org/a/l8ZoGO5OEkUgdOnpqPADf3iAS" target="_blank"><img src="https://asciinema.org/a/04FC5ynmaTrTrHlW7Icfh4Jyd.svg" /></a>

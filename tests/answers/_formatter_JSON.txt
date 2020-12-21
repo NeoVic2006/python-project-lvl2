@@ -142,6 +142,11 @@
       "name": "group3",
       "value": [
         {
+          "name": "fee",
+          "value": 100500,
+          "status": "same"
+        },
+        {
           "name": "deep",
           "value": [
             {
@@ -156,11 +161,6 @@
               "status": "same"
             }
           ],
-          "status": "same"
-        },
-        {
-          "name": "fee",
-          "value": 100500,
           "status": "same"
         }
       ],

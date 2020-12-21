@@ -36,5 +36,4 @@ def _format_value(value):
             string = "false"
         else:
             string = ("'" + str(value) + "'")
-        return string
     return string

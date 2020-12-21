@@ -13,30 +13,49 @@ def _get_diff(file1, file2):
     old_keys = file1.keys() - file2.keys()
     same_keys = file1.keys() - new_keys - old_keys
     result = []
-    for i in same_keys:
-        if isinstance(file1[i], dict) and isinstance(file2[i], dict):
-            result.append({"name": i,
-                           "value": _get_diff(file1[i], file2[i]),
+    for key in same_keys:
+        if isinstance(file1[key], dict) and isinstance(file2[key], dict):
+            result.append({"name": key,
+                           "value": _get_diff(file1[key], file2[key]),
                            "status": "same"})
         else:
-            if file1[i] == file2[i]:
-                result.append(_single_file_check(i, file2, "same"))
+            if file1[key] == file2[key]:
+                result.append(_single_file_check(key, file2, "same"))
             else:
-                result.append(_single_file_check(i, file1, "changed_old"))
-                result.append(_single_file_check(i, file2, "changed_new"))
+                result.append(_single_file_check(key, file1, "changed_old"))
+                result.append(_single_file_check(key, file2, "changed_new"))
 
-    for i in old_keys:
-        result.append(_single_file_check(i, file1, "old"))
-    for i in new_keys:
-        result.append(_single_file_check(i, file2, "new"))
+    for key in old_keys:
+        result.append(_single_file_check(key, file1, "old"))
+
+    for key in new_keys:
+        if isinstance(file2[key], dict):
+            result.append({"name": key,
+                           "value": _tree_for_newvalues(file2[key]),
+                           "status": "new"})
+        else:
+            result.append(_single_file_check(key, file2, "new"))
+
     result = sorted(result, key=itemgetter('name'))
     return result
 
 
-def _single_file_check(i, file, status):
-    if isinstance(file[i], dict):
-        return {"name": i,
-                "value": _get_diff(file[i], file[i]),
+def _single_file_check(key, file, status):
+    if isinstance(file[key], dict):
+        return {"name": key,
+                "value": _get_diff(file[key], file[key]),
                 "status": status}
     else:
-        return {"name": i, "value": file[i], "status": status}
+        return {"name": key, "value": file[key], "status": status}
+
+
+def _tree_for_newvalues(value):
+    result = []
+    for key in value.keys():
+        if isinstance(value[key], dict):
+            result.append({"name": key,
+                           "value": _tree_for_newvalues(value[key]),
+                           "status": "same"})
+        else:
+            result.append({"name": key, "value": value[key], "status": "same"})
+    return result

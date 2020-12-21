@@ -1,5 +1,5 @@
 import argparse
-from gendiff.scripts.check_file_extention import check_extension
+from gendiff.gendiff import generate_diff
 from gendiff.formatters.formatter import formatters
 
 
@@ -16,9 +16,9 @@ def main():
                         help="set output format",
                         default="stylish")
     args = parser.parse_args()
-    result = formatters(check_extension(args.first_file,
+    result = formatters(generate_diff(args.first_file,
                                         args.second_file), args.format)
-    # print(result)
+    print(result)
     return result
 
 

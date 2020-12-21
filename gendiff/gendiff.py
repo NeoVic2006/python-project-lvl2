@@ -1,21 +1,10 @@
-import json
-import yaml
 from operator import itemgetter
-
-
-def generate_diff_JSON(json_file_1, json_file_2):
-    json1 = json.load(open(json_file_1))
-    json2 = json.load(open(json_file_2))
-    return generate_diff(json1, json2)
-
-
-def generate_diff_YAML(yml_file_1, yml_file_2):
-    yaml1 = yaml.load(open(yml_file_1, 'r'), Loader=yaml.FullLoader)
-    yaml2 = yaml.load(open(yml_file_2, 'r'), Loader=yaml.FullLoader)
-    return generate_diff(yaml1, yaml2)
+from gendiff.scripts.check_file_extention import check_extension
 
 
 def generate_diff(file1, file2):
+    file1, file2 = check_extension(file1, file2)
+
     new_keys = file2.keys() - file1.keys()
     old_keys = file1.keys() - file2.keys()
     same_keys = file1.keys() - new_keys - old_keys

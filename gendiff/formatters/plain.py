@@ -26,7 +26,7 @@ def plain_formatter(file, path=''):
 def _format_value(value):
     string = ''
     if isinstance(value, list):
-        string = '[complex value]' 
+        string = '[complex value]'
     elif value is None:
         string = "null"
     elif value is True:

@@ -24,13 +24,17 @@ def plain_formatter(file, path=''):
 
 
 def _format_value(value):
+    string = ''
     if isinstance(value, list):
-        return '[complex value]'
+        string = '[complex value]'
     else:
         if value is None:
-            return "null"
-        if value is True:
-            return "true"
-        if value is False:
-            return "false"
-        return ("'" + str(value) + "'")
+            string = "null"
+        elif value is True:
+            string = "true"
+        elif value is False:
+            string = "false"
+        else:
+            string = ("'" + str(value) + "'")
+        return string
+    return string

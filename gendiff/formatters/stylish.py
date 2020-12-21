@@ -8,17 +8,20 @@ STATUSES = {
 
 
 def stylish_formatter(file, spaces=2):
-    string = ' {'
+    string = '{'
     for i in file:
-        string += "\n" + spaces*" " + STATUSES[i['status']] + " " + i["name"]
+        string += "\n" + spaces*" " + STATUSES[i['status']]
+        string += " " + i["name"] + ": "
         if isinstance(i["value"], list):
             string += stylish_formatter(i["value"], spaces + 4)
         else:
             if i["value"] is None:
-                string += ": " + "null"
-            if i["value"] is True:
-                string += ": " + "true"
+                string += "null"
+            elif i["value"] is True:
+                string += "true"
+            elif i["value"] is False:
+                string += "false"
             else:
-                string += ": " + str(i["value"])
+                string += str(i["value"])
     string += "\n" + ((spaces-2)*" ") + "}"
     return string

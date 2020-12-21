@@ -25,6 +25,3 @@ def stylish_formatter(file, spaces=2):
                 string += str(i["value"])
     string += "\n" + ((spaces - 2) * " ") + "}"
     return string
-
-
-# strings.append("Property '{}{}' was added with value: {}".format(path, i["name"], _format_value(i["value"])))

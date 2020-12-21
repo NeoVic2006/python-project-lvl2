@@ -33,6 +33,8 @@ def _format_value(value):
         string = "true"
     elif value is False:
         string = "false"
+    elif type(value) == int:
+        string = value
     else:
         string = ("'" + str(value) + "'")
     return string

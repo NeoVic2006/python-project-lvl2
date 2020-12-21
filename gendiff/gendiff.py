@@ -4,17 +4,18 @@ from gendiff.scripts.check_file_extention import check_extension
 
 def generate_diff(file1, file2):
     file1, file2 = check_extension(file1, file2)
+    return test_func(file1, file2)
 
+
+def test_func(file1, file2):
     new_keys = file2.keys() - file1.keys()
     old_keys = file1.keys() - file2.keys()
     same_keys = file1.keys() - new_keys - old_keys
-
     result = []
-
     for i in same_keys:
         if isinstance(file1[i], dict) and isinstance(file2[i], dict):
             result.append({"name": i,
-                           "value": generate_diff(file1[i], file2[i]),
+                           "value": test_func(file1[i], file2[i]),
                            "status": "same"})
         else:
             if file1[i] == file2[i]:
@@ -34,7 +35,7 @@ def generate_diff(file1, file2):
 def _single_file_check(i, file, status):
     if isinstance(file[i], dict):
         return {"name": i,
-                "value": generate_diff(file[i], file[i]),
+                "value": test_func(file[i], file[i]),
                 "status": status}
     else:
         return {"name": i, "value": file[i], "status": status}

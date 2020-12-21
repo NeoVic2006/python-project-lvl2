@@ -3,7 +3,7 @@ from gendiff.scripts.check_file_extention import check_extension
 from gendiff.formatters.formatter import formatters
 
 
-def generate_diff(file1, file2, format):
+def generate_diff(file1, file2, format="stylish"):
     file1, file2 = check_extension(file1, file2)
     return formatters(test_func(file1, file2), format)
 

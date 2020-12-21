@@ -10,19 +10,19 @@ def plain_formatter(file, path=''):
 
         if i["status"] == "new":
             strings.append("Property '{}{}' was added with value: {}"
-                            .format(path, i["name"],
-                                    _format_value(i["value"])))
+                           .format(path, i["name"],
+                                   _format_value(i["value"])))
         elif i["status"] == "old":
             strings.append("Property '{}{}' was removed".format(
                 path, i["name"]))
         elif i["status"] == "changed_old":
             chan_status = {"name": i["name"],
-                            "value": i["value"]}
+                           "value": i["value"]}
         elif i["status"] == "changed_new":
             strings.append("Property '{}{}' was updated. From {} to {}"
-                            .format(path, i["name"],
-                                    _format_value(chan_status["value"]),
-                                    _format_value(i["value"])))
+                           .format(path, i["name"],
+                                   _format_value(chan_status["value"]),
+                                   _format_value(i["value"])))
     return '\n'.join(strings)
 
 

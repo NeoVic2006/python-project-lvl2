@@ -17,7 +17,7 @@ def main():
                         default="stylish")
     args = parser.parse_args()
     result = formatters(generate_diff(args.first_file,
-                                        args.second_file), args.format)
+                                      args.second_file), args.format)
     print(result)
     return result
 

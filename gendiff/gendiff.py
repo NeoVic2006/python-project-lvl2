@@ -23,7 +23,7 @@ def _get_diff(file1, file2):
                 result.append(status_tree(file1, key, "same", "changed_old"))
                 result.append(status_tree(file2,
                                           key,
-                                          "changed_new",
+                                          "same",
                                           "changed_new"))
     for key in old_keys:
         result.append(status_tree(file1, key, "same", "old"))

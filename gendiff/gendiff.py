@@ -16,12 +16,11 @@ def _get_diff(file1, file2):
             result.append({"name": key,
                            "value": _get_diff(file1[key], file2[key]),
                            "status": "same"})
+        if file1[key] == file2[key]:
+            result.append(status_tree(file2, key, "same", "same"))
         else:
-            if file1[key] == file2[key]:
-                result.append(status_tree(file2, key, "same", "same"))
-            else:
-                result.append(status_tree(file1, key, "same", "changed_old"))
-                result.append(status_tree(file2, key, "same", "changed_new"))
+            result.append(status_tree(file1, key, "same", "changed_old"))
+            result.append(status_tree(file2, key, "same", "changed_new"))
     for key in old_keys:
         result.append(status_tree(file1, key, "same", "old"))
     for key in new_keys:

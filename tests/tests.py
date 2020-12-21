@@ -45,5 +45,5 @@ if __name__ == '__main__':
 
 
 # pytest -q tests/tests.py
-# pip install pytest-cov  
+# pip install pytest-cov
 # pytest --cov=gendiff --cov-report xml tests/tests.py

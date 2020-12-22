@@ -35,15 +35,3 @@ def test_recursive_JSON_YAML():
     result_YAML = generate_diff("tests/fixtures/yaml_files/file1recursive.yml", "tests/fixtures/yaml_files/file2recursive.yml", "stylish")
     assert result_JSON == answer
     assert result_YAML == answer
-
-
-if __name__ == '__main__':
-    test_formatter_plain()
-    test_formatter_stylish()
-    test_formatter_json()
-    test_recursive_JSON_YAML()
-
-
-# pytest -q tests/tests.py
-# pip install pytest-cov
-# pytest --cov=gendiff --cov-report xml tests/tests.py

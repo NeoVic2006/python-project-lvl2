@@ -11,7 +11,7 @@
 ```
 pip3 install git+https://github.com/NeoVic2006/python-project-lvl2.git
 ```
-#### Run ```gendiff -h``` for help
+Run ```gendiff -h``` for help
 =======
 
 #### First update 0.3.5. Demo of gendiff library with JSON files:

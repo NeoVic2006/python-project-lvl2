@@ -14,4 +14,4 @@ def formatters(data, format):
     elif format == DEFAULT_STYLE:
         return stylish_formatter(data)
     else:
-        print("Wrong Format")
+        raise RuntimeError("This is not valid Format")

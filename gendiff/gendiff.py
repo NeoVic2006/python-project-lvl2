@@ -45,18 +45,18 @@ def getting_keys(file1, file2):
 def status_tree(file, key, ins_status, out_status):
     if isinstance(file[key], dict):
         return {"name": key,
-                "value": _tree_for_singelvalues(file[key], ins_status),
+                "value": _tree_for_singlevalues(file[key], ins_status),
                 "status": out_status}
     else:
         return {"name": key, "value": file[key], "status": out_status}
 
 
-def _tree_for_singelvalues(value, status):
+def _tree_for_singlevalues(value, status):
     result = []
     for key in value.keys():
         if isinstance(value[key], dict):
             result.append({"name": key,
-                           "value": _tree_for_singelvalues(value[key], status),
+                           "value": _tree_for_singlevalues(value[key], status),
                            "status": status})
         else:
             result.append({"name": key, "value": value[key], "status": status})

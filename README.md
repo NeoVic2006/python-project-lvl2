@@ -5,6 +5,8 @@
 [![Actions Status](https://github.com/NeoVic2006/python-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/NeoVic2006/python-project-lvl2/actions)
 
 # Difference Calculator
+Gendiff is a CLI-utility to show difference between two files of same or different formats:Json - Json or Yaml - Json and etc.
+
 =======
 
 #### Install package

@@ -4,14 +4,16 @@
 [![Github Actions Status](https://github.com/NeoVic2006/python-project-lvl2/workflows/Python%20CI/badge.svg)](https://github.com/NeoVic2006/python-project-lvl2/actions)
 [![Actions Status](https://github.com/NeoVic2006/python-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/NeoVic2006/python-project-lvl2/actions)
 
+# Difference Calculator
+Gendiff is a CLI-utility to show difference between two files formats: Json - Json, Yaml - Json and Yaml - Yaml.
 
 =======
 
 #### Install package
-
-pip3 install -i https://test.pypi.org/simple/ neovic2006-project-cli
-
-Link for Pypi latest version: https://test.pypi.org/project/neovic2006-project-cli/
+```
+pip3 install git+https://github.com/NeoVic2006/python-project-lvl2.git
+```
+Run ```gendiff -h``` for help
 
 =======
 

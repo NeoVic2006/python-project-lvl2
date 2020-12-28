@@ -11,8 +11,7 @@
 ```
 pip3 install git+https://github.com/NeoVic2006/python-project-lvl2.git
 ```
-Link for Pypi latest version: https://test.pypi.org/project/neovic2006-project-cli/
-
+#### Run gendiff -h for help
 =======
 
 #### First update 0.3.5. Demo of gendiff library with JSON files:

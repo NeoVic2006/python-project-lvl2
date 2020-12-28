@@ -3,10 +3,15 @@ from gendiff.formatters.plain import plain_formatter
 from gendiff.formatters.json import json_formatter
 
 
+DEFAULT_STYLE = "stylish"
+
+
 def formatters(data, format):
     if format == "json":
         return json_formatter(data)
     elif format == "plain":
         return plain_formatter(data)
-    format == "stylish"
-    return stylish_formatter(data)
+    elif format == DEFAULT_STYLE:
+        return stylish_formatter(data)
+    else:
+        print("Wrong Format")

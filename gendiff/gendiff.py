@@ -1,10 +1,12 @@
 from operator import itemgetter
-from gendiff.scripts.check_file_extention import check_extension
+from gendiff.check_file_extention import check_extension
 from gendiff.formatters.formatter import formatters
+from gendiff.formatters.formatter import DEFAULT_STYLE
 
 
-def generate_diff(file1, file2, format="stylish"):
-    file1, file2 = check_extension(file1, file2)
+def generate_diff(file1, file2, format=DEFAULT_STYLE):
+    file1 = check_extension(file1)
+    file2 = check_extension(file2)
     return formatters(_get_diff(file1, file2), format)
 
 

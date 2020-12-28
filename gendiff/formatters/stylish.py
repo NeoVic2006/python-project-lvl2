@@ -15,7 +15,7 @@ def stylish_formatter(file, spaces=2):
         if isinstance(i["value"], list):
             string += stylish_formatter(i["value"], spaces + 4)
         else:
-            
+
             string += _format_value(i["value"])
     string += "\n" + ((spaces - 2) * " ") + "}"
     return string

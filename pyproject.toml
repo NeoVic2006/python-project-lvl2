@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "hexlet_code"
-version = "0.9.5"
-description = "JSON formater added with tests"
+version = "1.0.0"
+description = "All functions are done"
 authors = ["Sergey Vengilevskiy <NeoVic2006@gmail.com>"]
 
 packages = [

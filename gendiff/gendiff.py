@@ -35,7 +35,6 @@ def _get_diff(file1, file2):
 
 
 def sorting(result):
-    print(result)
     return sorted(result, key=itemgetter('name'))
 
 

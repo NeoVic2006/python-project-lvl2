@@ -20,14 +20,14 @@ def _get_diff(file1, file2):
                            "status": "same"})
 
         elif file1[key] == file2[key]:
-            result.append(status_tree(file2, key, "same", "same"))
+            result.append({"name": key, "value": file2[key], "status": "same"})
         else:
-            result.append(status_tree(file1, key, "same", "changed_old"))
-            result.append(status_tree(file2, key, "same", "changed_new"))
+            result.append({"name": key, "value": file1[key], "status": "changed_old"})
+            result.append({"name": key, "value": file2[key], "status": "changed_new"})
     for key in old_keys:
-        result.append(status_tree(file1, key, "same", "old"))
+        result.append({"name": key, "value": file1[key], "status": "old"})
     for key in new_keys:
-        result.append(status_tree(file2, key, "same", "new"))
+        result.append({"name": key, "value": file2[key], "status": "new"})
     return sorting(result)
 
 
@@ -40,24 +40,3 @@ def getting_keys(file1, file2):
     old_keys = file1.keys() - file2.keys()
     same_keys = file1.keys() - new_keys - old_keys
     return new_keys, old_keys, same_keys
-
-
-def status_tree(file, key, ins_status, out_status):
-    if isinstance(file[key], dict):
-        return {"name": key,
-                "value": _tree_for_singlevalues(file[key], ins_status),
-                "status": out_status}
-    else:
-        return {"name": key, "value": file[key], "status": out_status}
-
-
-def _tree_for_singlevalues(value, status):
-    result = []
-    for key in value.keys():
-        if isinstance(value[key], dict):
-            result.append({"name": key,
-                           "value": _tree_for_singlevalues(value[key], status),
-                           "status": status})
-        else:
-            result.append({"name": key, "value": value[key], "status": status})
-    return result

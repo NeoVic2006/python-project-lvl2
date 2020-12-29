@@ -1,5 +1,5 @@
 UNCHANGED = "same"
-CHANGED = "old"
+REMOVED = "old"
 ADDED = "new"
 UPDATED_OLD = "changed_old"
 UPDATED_NEW = "changed_new"
@@ -18,7 +18,7 @@ def plain_formatter(file, path=''):
             strings.append("Property '{}{}' was added with value: {}"
                            .format(path, i["name"],
                                    _format_value(i["value"])))
-        elif i["status"] == CHANGED:
+        elif i["status"] == REMOVED:
             strings.append("Property '{}{}' was removed".format(
                 path, i["name"]))
         elif i["status"] == UPDATED_OLD:
@@ -34,7 +34,7 @@ def plain_formatter(file, path=''):
 
 def _format_value(value):
     string = ''
-    if isinstance(value, list):
+    if isinstance(value, dict):
         string = '[complex value]'
     elif value is None:
         string = "null"

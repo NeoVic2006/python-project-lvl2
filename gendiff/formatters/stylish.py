@@ -10,14 +10,16 @@ STATUSES = {
 def stylish_formatter(file, spaces=2):
     string = '{'
     for i in file:
-        string += "\n" + spaces * " " + STATUSES[i['status']]
-        string += " " + i["name"] + ": "
-        if isinstance(i["value"], list):
-            string += stylish_formatter(i["value"], spaces + 4)
-        elif isinstance(i["value"], dict):
-            result = _building_dict_tree(i["value"], spaces + 6)
-            string += result
-        else:
+        try: 
+            string += "\n" + spaces * " " + STATUSES[i['status']]
+            string += " " + i["name"] + ": "
+            if isinstance(i["value"], list):
+                string += stylish_formatter(i["value"], spaces + 4)
+            elif isinstance(i["value"], dict):
+                string +=_building_dict_tree(i["value"], spaces + 6)
+            else:
+                string += _format_value(i["value"])
+        except:
             string += _format_value(i["value"])
     string += "\n" + ((spaces - 2) * " ") + "}"
     return string

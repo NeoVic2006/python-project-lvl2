@@ -18,7 +18,6 @@ def _get_diff(file1, file2):
             result.append({"name": key,
                            "value": _get_diff(file1[key], file2[key]),
                            "status": "same"})
-
         elif file1[key] == file2[key]:
             result.append({"name": key, "value": file2[key], "status": "same"})
         else:
@@ -36,6 +35,7 @@ def _get_diff(file1, file2):
 
 
 def sorting(result):
+    print(result)
     return sorted(result, key=itemgetter('name'))
 
 

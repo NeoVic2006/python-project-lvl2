@@ -13,7 +13,6 @@ def check_extension(file_name):
                 return json.load(file)
         except JSONDecodeError:
             raise RuntimeError("This is not valid JSON file")
-
     elif root_ext[1] == '.yml':
         try:
             with open(file_name, 'r') as file:

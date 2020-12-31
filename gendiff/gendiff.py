@@ -27,6 +27,7 @@ def _get_diff(file1, file2):
             result.append({"name": key,
                            "value": file2[key],
                            "status": "changed_new"})
+
     for key in old_keys:
         result.append({"name": key, "value": file1[key], "status": "old"})
     for key in new_keys:

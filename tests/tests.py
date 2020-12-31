@@ -11,7 +11,7 @@ import pytest
     ("tests/fixtures/test_formatter_plain/answer.txt", generate_diff("tests/fixtures/test_formatter_plain/file1recursive.yml", "tests/fixtures/test_formatter_plain/file2recursive.yml", "plain")),
     ("tests/fixtures/test_formatter_stylish/answer.txt", generate_diff("tests/fixtures/test_formatter_stylish/file1.json", "tests/fixtures/test_formatter_stylish/file2.json", "stylish")),
     ("tests/fixtures/test_formatter_stylish/answer.txt", generate_diff("tests/fixtures/test_formatter_stylish/file1.yml", "tests/fixtures/test_formatter_stylish/file2.yml", "stylish")),
-    ])
+                                               ])
 def test_eval(file_path, result):
     with open(file_path, "r") as f:
         answer = f.read()

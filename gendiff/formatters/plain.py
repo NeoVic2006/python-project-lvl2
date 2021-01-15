@@ -5,36 +5,35 @@ UPDATED_OLD = "changed_old"
 UPDATED_NEW = "changed_new"
 
 
-def plain_formatter(file, path=''):
-    strings = []
+def plain_formatter(file_data, path=''):
+    lines = []
     chan_status = {}
-    for i in file:
-        if isinstance(i["value"], list):
-            if i["status"] == UNCHANGED:
-                strings.append("{}".format(
-                    plain_formatter(i["value"],
-                                    path=path + (i["name"] + "."))))
-        if i["status"] == ADDED:
-            strings.append("Property '{}{}' was added with value: {}"
-                           .format(path, i["name"],
-                                   _format_value(i["value"])))
-        elif i["status"] == REMOVED:
-            strings.append("Property '{}{}' was removed".format(
-                path, i["name"]))
-        elif i["status"] == UPDATED_OLD:
-            chan_status = {"name": i["name"],
-                           "value": i["value"]}
-        elif i["status"] == UPDATED_NEW:
-            strings.append("Property '{}{}' was updated. From {} to {}"
-                           .format(path, i["name"],
+    for line in file_data:
+        if isinstance(line["value"], list):
+            if line["status"] == UNCHANGED:
+                lines.append("{}".format(
+                    plain_formatter(line["value"],
+                                    path=path + (line["name"] + "."))))
+        if line["status"] == ADDED:
+            lines.append("Property '{}{}' was added with value: {}"
+                           .format(path, line["name"],
+                                   _format_value(line["value"])))
+        elif line["status"] == REMOVED:
+            lines.append("Property '{}{}' was removed".format(
+                path, line["name"]))
+        elif line["status"] == UPDATED_OLD:
+            chan_status = {"name": line["name"],
+                           "value": line["value"]}
+        elif line["status"] == UPDATED_NEW:
+            lines.append("Property '{}{}' was updated. From {} to {}"
+                           .format(path, line["name"],
                                    _format_value(chan_status["value"]),
-                                   _format_value(i["value"])))
-    return '\n'.join(strings)
+                                   _format_value(line["value"])))
+    return '\n'.join(lines)
 
 
 def _format_value(value):
-    string = ''
-    if isinstance(value, dict):
+    if isinstance(value, dict) or isinstance(value, list):
         string = '[complex value]'
     elif value is None:
         string = "null"

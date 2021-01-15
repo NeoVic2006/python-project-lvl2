@@ -7,41 +7,39 @@ STATUSES = {
 }
 
 
-def stylish_formatter(file, spaces=2):
+def stylish_formatter(file_data, spaces=0):
     string = '{'
-    for i in file:
-        string += "\n" + spaces * " " + STATUSES[i['status']]
-        string += " " + i["name"] + ": "
+    for i in file_data:
+        string += "\n {} {} {}: ".format(spaces * " ", STATUSES[i['status']], i["name"])
         if isinstance(i["value"], list) and isinstance(i["value"][0], dict):
             string += stylish_formatter(i["value"], spaces + 4)
         elif isinstance(i["value"], dict):
-            string += _building_dict_tree(i["value"], spaces + 6)
+            string += _formating_dict_data(i["value"], spaces + 8)
         else:
             string += _format_value(i["value"])
-    string += "\n" + ((spaces - 2) * " ") + "}"
+    string += "\n{}}}".format((spaces) * " ")
     return string
 
 
 def _format_value(value):
-    string = ''
     if value is None:
-        string += "null"
+        string = "null"
     elif value is True:
-        string += "true"
+        string = "true"
     elif value is False:
-        string += "false"
+        string = "false"
     else:
-        string += str(value)
+        string = str(value)
     return string
 
 
-def _building_dict_tree(value, spaces):
+def _formating_dict_data(value, spaces):
     string = '{'
     for i in value:
-        string += "\n" + spaces * " " + i + ": "
+        string += "\n{}{}: ".format((spaces * " "),i)
         if isinstance(value[i], dict):
-            string += _building_dict_tree(value[i], spaces + 4)
+            string += _formating_dict_data(value[i], spaces + 4)
         else:
             string += _format_value(value[i])
-    string += "\n" + ((spaces - 4) * " ") + "}"
+    string += "\n{}}}".format((spaces - 4) * " ")
     return string

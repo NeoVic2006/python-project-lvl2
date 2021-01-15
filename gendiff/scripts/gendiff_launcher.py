@@ -1,6 +1,6 @@
 import argparse
 from gendiff.gendiff import generate_diff
-from gendiff.formatters.formatter import DEFAULT_STYLE
+from gendiff.formatters.formatter import DEFAULT_STYLE, PLAIN_STYLE, JSON_STYLE
 
 
 def main():
@@ -14,7 +14,7 @@ def main():
     parser.add_argument("second_file")
     parser.add_argument("-f", "--format",
                         help="set output format",
-                        choices=['stylish', 'plain', 'json'],
+                        choices=[DEFAULT_STYLE, PLAIN_STYLE, JSON_STYLE],
                         default=DEFAULT_STYLE)
     args = parser.parse_args()
     result = generate_diff(args.first_file,

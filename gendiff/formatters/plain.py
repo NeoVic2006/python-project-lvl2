@@ -1,13 +1,13 @@
 UNCHANGED = "same"
 REMOVED = "old"
 ADDED = "new"
-UPDATED_OLD = "changed_old"
-UPDATED_NEW = "changed_new"
+UPDATED = "changed"
+
 
 
 def plain_formatter(file_data, path=''):
     lines = []
-    chan_status = {}
+
     for line in file_data:
         if isinstance(line["value"], list):
             if line["status"] == UNCHANGED:
@@ -21,14 +21,11 @@ def plain_formatter(file_data, path=''):
         elif line["status"] == REMOVED:
             lines.append("Property '{}{}' was removed".format(
                 path, line["name"]))
-        elif line["status"] == UPDATED_OLD:
-            chan_status = {"name": line["name"],
-                           "value": line["value"]}
-        elif line["status"] == UPDATED_NEW:
+        elif line["status"] == UPDATED:
             lines.append("Property '{}{}' was updated. From {} to {}"
                            .format(path, line["name"],
-                                   _format_value(chan_status["value"]),
-                                   _format_value(line["value"])))
+                                   _format_value(line["value"]),
+                                   _format_value(line["value_new"])))
     return '\n'.join(lines)
 
 

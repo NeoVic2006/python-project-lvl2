@@ -12,18 +12,21 @@ def generate_diff(file1, file2, format=DEFAULT_STYLE):
 
 def _get_diff(file1_data, file2_data):
     new_keys, old_keys, same_keys = getting_keys(file1_data, file2_data)
-    
+
     result = []
     for key in same_keys:
         print(file1_data[key])
-        if isinstance(file1_data[key], dict) and isinstance(file2_data[key], dict):
+        if isinstance(file1_data[key], dict) and isinstance(file2_data[key],
+                                                            dict):
             result.append({"name": key,
-                           "value": _get_diff(file1_data[key], file2_data[key]),
+                           "value": _get_diff(file1_data[key],
+                                              file2_data[key]),
                            "status": "dict"})
         elif file1_data[key] == file2_data[key]:
-            result.append({"name": key, "value": file2_data[key], "status": "same"})
+            result.append({"name": key, "value": file2_data[key],
+                           "status": "same"})
         else:
-            print(file1_data[key],file2_data[key])
+            print(file1_data[key], file2_data[key])
             result.append({"name": key,
                            "value": file1_data[key],
                            "value_new": file2_data[key],

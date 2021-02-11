@@ -11,5 +11,5 @@ def getting_file_data(file_path):
                 return json.load(file)
             elif ext.lower() == '.yml' or ext.lower() == '.yaml':
                 return yaml.load(file, Loader=yaml.FullLoader)
-    except :
+    except ext.DoesNotExist:
         raise RuntimeError("File extention is incorrect")

@@ -4,28 +4,27 @@ ADDED = "new"
 UPDATED = "changed"
 
 
-
 def plain_formatter(file_data, path=''):
     lines = []
-
     for line in file_data:
         if isinstance(line["value"], list):
             if line["status"] == UNCHANGED:
                 lines.append("{}".format(
-                    plain_formatter(line["value"],
-                                    path=path + (line["name"] + "."))))
+                                        plain_formatter(line["value"],
+                                                        path=path +
+                                                        (line["name"] + "."))))
         if line["status"] == ADDED:
             lines.append("Property '{}{}' was added with value: {}"
-                           .format(path, line["name"],
-                                   _format_value(line["value"])))
+                         .format(path, line["name"],
+                                 _format_value(line["value"])))
         elif line["status"] == REMOVED:
             lines.append("Property '{}{}' was removed".format(
                 path, line["name"]))
         elif line["status"] == UPDATED:
             lines.append("Property '{}{}' was updated. From {} to {}"
-                           .format(path, line["name"],
-                                   _format_value(line["value"]),
-                                   _format_value(line["value_new"])))
+                         .format(path, line["name"],
+                                 _format_value(line["value"]),
+                                 _format_value(line["value_new"])))
     return '\n'.join(lines)
 
 

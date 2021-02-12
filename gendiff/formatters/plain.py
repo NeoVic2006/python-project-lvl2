@@ -10,9 +10,7 @@ def plain_formatter(file_data, path=''):
         if isinstance(line["value"], list):
             if line["status"] == UNCHANGED:
                 lines.append("{}".format(plain_formatter(line["value"],
-                                                         path=path +
-                                                         (line["name"] +
-                                                         "."))))
+                                         path=path + (line["name"] + "."))))
         if line["status"] == ADDED:
             lines.append("Property '{}{}' was added with value: {}"
                          .format(path, line["name"],

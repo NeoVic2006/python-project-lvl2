@@ -15,19 +15,32 @@ def stylish_formatter(file_data, spaces=0):
             if isinstance(i["value"], list):
                 string += stylish_formatter(i["value"], spaces + 4)
             else:
-                string += _format_value(i["value"])
+                string += _format_v(i["value"])
+
+            if isinstance(i["value_new"], list):
+                string += "\n {} + {}: {}".format(spaces * " ",
+                                                  i["name"],
+                                                  _format_v(stylish_formatter(
+                                                                i["value_new"],
+                                                                spaces + 4)))
+            else:
+                string += "\n {} + {}: {}".format(spaces * " ",
+                                                  i["name"],
+                                                  _format_v(i["value_new"]))
+            '''
             string += "\n {} + {}: {}".format(spaces * " ",
                                               i["name"],
                                               _format_value(i["value_new"]))
+            '''
         elif isinstance(i["value"], list):
             string += stylish_formatter(i["value"], spaces + 4)
         else:
-            string += _format_value(i["value"])
+            string += _format_v(i["value"])
     string += "\n{}}}".format((spaces) * " ")
     return string
 
 
-def _format_value(value):
+def _format_v(value):
     if value is None:
         string = "null"
     elif value is True:

@@ -24,7 +24,6 @@ def _get_diff(file1_data, file2_data):
             result.append({"name": key, "value": file2_data[key],
                            "status": "same"})
         else:
-
             if isinstance(file1_data[key], dict):
                 result.append({"name": key,
                                "value": _get_diff(file1_data[key],

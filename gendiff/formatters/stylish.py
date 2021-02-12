@@ -21,17 +21,12 @@ def stylish_formatter(file_data, spaces=0):
                 string += "\n {} + {}: {}".format(spaces * " ",
                                                   i["name"],
                                                   _format_v(stylish_formatter(
-                                                                i["value_new"],
-                                                                spaces + 4)))
+                                                            i["value_new"],
+                                                            spaces + 4)))
             else:
                 string += "\n {} + {}: {}".format(spaces * " ",
                                                   i["name"],
                                                   _format_v(i["value_new"]))
-            '''
-            string += "\n {} + {}: {}".format(spaces * " ",
-                                              i["name"],
-                                              _format_value(i["value_new"]))
-            '''
         elif isinstance(i["value"], list):
             string += stylish_formatter(i["value"], spaces + 4)
         else:

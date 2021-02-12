@@ -21,12 +21,8 @@
         {
           "name": "setting3",
           "value": true,
-          "status": "changed_old"
-        },
-        {
-          "name": "setting3",
-          "value": null,
-          "status": "changed_new"
+          "value_new": null,
+          "status": "changed"
         },
         {
           "name": "setting4",
@@ -35,9 +31,13 @@
         },
         {
           "name": "setting5",
-          "value": {
-            "key5": "value5"
-          },
+          "value": [
+            {
+              "name": "key5",
+              "value": "value5",
+              "status": "same"
+            }
+          ],
           "status": "new"
         },
         {
@@ -49,12 +49,8 @@
                 {
                   "name": "wow",
                   "value": "",
-                  "status": "changed_old"
-                },
-                {
-                  "name": "wow",
-                  "value": "so much",
-                  "status": "changed_new"
+                  "value_new": "so much",
+                  "status": "changed"
                 }
               ],
               "status": "same"
@@ -81,12 +77,8 @@
         {
           "name": "baz",
           "value": "bas",
-          "status": "changed_old"
-        },
-        {
-          "name": "baz",
-          "value": "bars",
-          "status": "changed_new"
+          "value_new": "bars",
+          "status": "changed"
         },
         {
           "name": "foo",
@@ -95,39 +87,67 @@
         },
         {
           "name": "nest",
-          "value": {
-            "key": "value"
-          },
-          "status": "changed_old"
-        },
-        {
-          "name": "nest",
-          "value": "str",
-          "status": "changed_new"
+          "value": [
+            {
+              "name": "key",
+              "value": "value",
+              "status": "same"
+            }
+          ],
+          "value_new": "str",
+          "status": "changed"
         }
       ],
       "status": "same"
     },
     {
       "name": "group2",
-      "value": {
-        "abc": 12345,
-        "deep": {
-          "id": 45
+      "value": [
+        {
+          "name": "abc",
+          "value": 12345,
+          "status": "same"
+        },
+        {
+          "name": "deep",
+          "value": [
+            {
+              "name": "id",
+              "value": 45,
+              "status": "same"
+            }
+          ],
+          "status": "same"
         }
-      },
+      ],
       "status": "old"
     },
     {
       "name": "group3",
-      "value": {
-        "fee": 100500,
-        "deep": {
-          "id": {
-            "number": 45
-          }
+      "value": [
+        {
+          "name": "deep",
+          "value": [
+            {
+              "name": "id",
+              "value": [
+                {
+                  "name": "number",
+                  "value": 45,
+                  "status": "same"
+                }
+              ],
+              "status": "same"
+            }
+          ],
+          "status": "same"
+        },
+        {
+          "name": "fee",
+          "value": 100500,
+          "status": "same"
         }
-      },
+      ],
       "status": "new"
     }
   ]

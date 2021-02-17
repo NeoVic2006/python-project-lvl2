@@ -25,21 +25,21 @@ def _get_diff(file1_data, file2_data):
                            "status": "same"})
         elif isinstance(file1_data[key], dict):
             result.append({"name": key,
-                            "value": _get_diff(file1_data[key],
-                                                file1_data[key]),
-                            "value_new": file2_data[key],
-                            "status": "changed"})
+                           "value": _get_diff(file1_data[key],
+                                              file1_data[key]),
+                           "value_new": file2_data[key],
+                           "status": "changed"})
         elif isinstance(file2_data[key], dict):
             result.append({"name": key,
-                            "value": file1_data[key],
-                            "value_new": _get_diff(file2_data[key],
-                                                    file2_data[key]),
-                            "status": "changed"})
+                           "value": file1_data[key],
+                           "value_new": _get_diff(file2_data[key],
+                                                  file2_data[key]),
+                           "status": "changed"})
         else:
             result.append({"name": key,
-                            "value": file1_data[key],
-                            "value_new": file2_data[key],
-                            "status": "changed"})
+                           "value": file1_data[key],
+                           "value_new": file2_data[key],
+                           "status": "changed"})
     for key in old_keys:
         if isinstance(file1_data[key], dict):
             result.append({"name": key,
